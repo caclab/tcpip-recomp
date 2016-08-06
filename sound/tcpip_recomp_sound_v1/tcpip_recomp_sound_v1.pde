@@ -115,7 +115,7 @@ void JSONParser(String fileName) {
       String tone = tempObject.getString("tone");
       float beat = tempObject.getFloat("beat");
       float duration = tempObject.getFloat("duration");
-      Notes.add(new Note(i+1, beat, tone, duration));
+      Notes.add(new Note(i+1, beat, tone, duration, "chapters"));
     }
   }
   barNum = jsc.size();
@@ -128,7 +128,7 @@ void JSONParser(String fileName) {
         String tone = tempObject.getString("tone");
         float beat = tempObject.getFloat("beat");
         float duration = tempObject.getFloat("duration");
-        Notes.add(new Note(i+1, beat, tone, duration));
+        Notes.add(new Note(i+1, beat, tone, duration, "chords"));
       }
     }
   }

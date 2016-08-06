@@ -1,10 +1,9 @@
-
-float lineDistance = 7;
-float gramDistance = 20;
-float gramGroupDistance = 50;
+float lineDistance = 4;
+float gramDistance = lineDistance*6;
+float gramGroupDistance = gramDistance*2;
 float titleHeight = 70;
-float beatDistance = 40;
-float noteSize = 6;
+float beatDistance = 60;
+float noteSize = lineDistance*6/7;
 float noteAngle = 60; 
 float timeAxis = 0, gramIndex = 0;
 float offsetY = 0, offsetX = 0; 
@@ -19,11 +18,16 @@ JSONObject js;
 String songTitle;
 String timeSignature;
 float beatSpeed;
+int barNum;
 
-int n1, n2, barNum;
+int n1, n2;
 HashMap<String, Float> toneMap = new HashMap<String, Float>();
 ArrayList<Note> Notes = new ArrayList<Note>();
 ArrayList<Note> NotesChords = new ArrayList<Note>();
+ArrayList<Bar> chapterBars = new ArrayList<Bar>();
+ArrayList<Bar> chordBars = new ArrayList<Bar>();
+
+float noteAccum;
 
 void setup() {
   size(600, 800);
@@ -37,16 +41,36 @@ void setup() {
   marginX = width*0.05;
   marginY = height*0.05;
 
+  for (Bar cpb : chordBars) {
+    for (int i = 0; i<cpb.notes.size(); i++) {
+      Note nt = cpb.notes.get(i);
+      if (int(nt.beatInBar)==nt.beatInBar && nt.duration<1) {
+        NoteGroup newNG = new NoteGroup();
+        //newNG.addNote(nt);        
+        noteAccum=0;
+        int j = 0;        
+        while (noteAccum<1) {
+          noteAccum = noteAccum + cpb.notes.get(i+j).duration;
+          newNG.addNote(cpb.notes.get(i+j));
+          j++;
+        }
+        if (noteAccum == int(noteAccum)) {
+          cpb.addNoteGroup(newNG);
+          for(Note nttt:newNG.group){
+            println(nttt.beatInBar+ "  "+ nttt.duration);
+          }
+        }
+        println();
+        //i = i+j;
+      }
+    }
+    //println(cpb.notes.size());
+    //println(cpb.noteGroups.size());
+  }
 
+  //for (Bar crb: chordBars) {
 
-  //drawNote(offset, 1, 0.5);
-  //drawNote(offset, 2, 0.5+0.5);
-  //drawNote(offset, 3, 0.5+0.5+0.5);
-  //drawNote(offset, 4, 0.5+0.5+0.5+0.5);
-  //drawNote(offset, 5, 0.5+0.5+0.5+0.5+0.5);
-  //drawNote(offset, 6, -1.5);
-
-  //frameRate(1);
+  //}
 }
 
 void draw() {
@@ -57,14 +81,17 @@ void draw() {
 
   for (int j = 0; j < 5; j++) {
     float offset = marginY + titleHeight + j*(lineDistance*10+gramDistance + gramGroupDistance); 
-    float offset2 = offset + lineDistance*5+gramDistance;
+    float offset2 = offset + lineDistance*4+gramDistance;
+    line(marginX, offset, marginX, offset2+lineDistance*4);
+    line(width-marginX, offset, width-marginX, offset2+lineDistance*4);
+
     for (int i = 0; i< 5; i++) {
       line(marginX, offset+lineDistance*i, width-marginX, offset+lineDistance*i);
       line(marginX, offset2+lineDistance*i, width-marginX, offset2+lineDistance*i);
     }
   }
 
-
+  noteAccum = 0;
   for (int i = 0; i<Notes.size(); i++) {
     Note nt = Notes.get(i);
     Note pnt = nt;
@@ -89,6 +116,20 @@ void draw() {
       } else {
         drawNote(nt, new Note(1, 1, "", 0, "chords"));
       }
+    }
+  }
+
+  for (int i = 0; i< chordBars.size(); i++) {  
+    Bar cpb = chordBars.get(i);
+    for (int j = 0; j < cpb.noteGroups.size(); j++) {
+      NoteGroup NG = cpb.noteGroups.get(j);
+      Note nt1 = NG.group.get(0);
+      Note nt2 = NG.group.get(NG.group.size()-1);
+      float sx = beatDistance * (i*4+j) % (width-2*marginX-head);
+      float sy = marginY+titleHeight+(gramGroupDistance+lineDistance*8+gramDistance)*int(beatDistance * (i*4+j) / (width-2*marginX-head));
+      stroke(1);
+      line(sx+nt1.beatInBar*beatDistance, sy, sx+nt2.beatInBar*beatDistance, sy);
+      if(frameCount==1) println("sx  "+sx+"  |  sy "+sy);
     }
   }
 }
@@ -128,7 +169,7 @@ void drawNote(Note NT, Note prevNT) {
     pushMatrix();
     if (NT.type == "chords") {
       translate(0, gramDistance+lineDistance*5);
-      lineNumber=lineNumber-3.5;
+      lineNumber=lineNumber-6;
     }
     translate(offsetX, offsetY +lineNumber * lineDistance);
 
@@ -163,21 +204,27 @@ void drawNote(Note NT, Note prevNT) {
       ellipse(0, 0, noteSize, noteSize * sqrt(2));
       rotate(-nAR);
     } 
+
     translate(noteSize/2*sqrt(2)*sin(nAR)*0.9, -noteSize/2*sqrt(2)*sin(nAR)*0.5);
     stroke(0);
 
-    if (duration == 0.5) {
-      strokeCap(ROUND);
-      strokeWeight(3);
-      line(0, -20, 8, -15);
-      strokeWeight(1);
-      line(0, 0, 0, -20);
-    } else if (duration == 1.5) {
-      line(0, 0, 0, -20);
-      ellipse(5, 0, 2, 2);
-    } else {
-      line(0, 0, 0, -20);
-    }
+
+
+    //if (duration == 0.5) {
+    //  strokeCap(ROUND);
+    //  strokeWeight(3);
+    //  line(0, -20, 8, -15);
+    //  strokeWeight(1);
+    //  line(0, 0, 0, -20);
+    //} else if (duration == 1.5) {
+    //  line(0, 0, 0, -20);
+    //  ellipse(5, 0, 2, 2);
+    //} else {
+    //  line(0, 0, 0, -20);
+    //}
+
+    line(0, 0, 0, -20);
+
     popMatrix();
   }
 }
@@ -216,28 +263,39 @@ void JSONParser(String fileName) {
   beatSpeed = js.getInt("beatSpeed");
 
   JSONArray jsc = js.getJSONArray("chapters");
+
+  barNum = jsc.size();
   for (int i = 0; i<jsc.size(); i++) {
     JSONArray jsb = jsc.getJSONObject(i).getJSONArray(str(i+1));
+    Bar newBar = new Bar();
     for (int j= 0; j<jsb.size(); j++) {
       JSONObject tempObject = jsb.getJSONObject(j);
       String tone = tempObject.getString("tone");
       float beat = tempObject.getFloat("beat");
       float duration = tempObject.getFloat("duration");
-      Notes.add(new Note(i+1, beat, tone, duration, "chapters"));
+      Note newNote = new Note(i+1, beat, tone, duration, "chapters");
+      Notes.add(newNote);
+      newBar.addNote(newNote);
     }
+    chapterBars.add(newBar);
   }
   barNum = jsc.size();
   if (!js.isNull("chords")) {
     jsc = js.getJSONArray("chords");
     for (int i = 0; i<jsc.size(); i++) {
       JSONArray jsb = jsc.getJSONObject(i).getJSONArray(str(i+1));
+      Bar newBar = new Bar();
+
       for (int j= 0; j<jsb.size(); j++) {
         JSONObject tempObject = jsb.getJSONObject(j);
         String tone = tempObject.getString("tone");
         float beat = tempObject.getFloat("beat");
         float duration = tempObject.getFloat("duration");
-        NotesChords.add(new Note(i+1, beat, tone, duration, "chords"));
+        Note newNote = new Note(i+1, beat, tone, duration, "chords");
+        NotesChords.add(newNote);
+        newBar.addNote(newNote);
       }
+      chordBars.add(newBar);
     }
   }
   if (jsc.size()>barNum) {

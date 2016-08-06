@@ -31,7 +31,7 @@ void setup() {
   background(255);
   smooth();
   toneMapSetup();
-  JSONParser("odeToJoy.json");
+  JSONParser("littleStar.json");
 
 
   marginX = width*0.05;

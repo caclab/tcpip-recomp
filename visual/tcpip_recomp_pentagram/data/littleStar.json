@@ -1,0 +1,723 @@
+{
+  "title": "Little Star",
+  "timeSignature": "8/8",
+  "beatSpeed": 120,
+  "chapters":[
+    {"1":[
+      {
+        "tone": "C4",
+        "beat": 1,
+        "duration": 1,
+      },
+      {
+        "tone": "C4",
+        "beat": 2,
+        "duration": 1,
+      },
+      {
+        "tone": "G4",
+        "beat": 3,
+        "duration": 1,
+      },
+      {
+        "tone": "G4",
+        "beat": 4,
+        "duration": 1,
+      },
+      {
+        "tone": "A4",
+        "beat": 5,
+        "duration": 1,
+      },
+      {
+        "tone": "A4",
+        "beat": 6,
+        "duration": 1,
+      },
+      {
+        "tone": "G4",
+        "beat": 7,
+        "duration": 2,
+      }
+    ]},
+    {"2":[
+      {
+        "tone": "F4",
+        "beat": 1,
+        "duration": 1,
+      },
+      {
+        "tone": "F4",
+        "beat": 2,
+        "duration": 1,
+      },
+      {
+        "tone": "E4",
+        "beat": 3,
+        "duration": 1,
+      },
+      {
+        "tone": "E4",
+        "beat": 4,
+        "duration": 1,
+      },
+      {
+        "tone": "D4",
+        "beat": 5,
+        "duration": 1,
+      },
+      {
+        "tone": "D4",
+        "beat": 6,
+        "duration": 1,
+      },
+      {
+        "tone": "C4",
+        "beat": 7,
+        "duration": 2,
+      }
+    ]},
+    {"3":[
+      {
+        "tone": "G4",
+        "beat": 1,
+        "duration": 1,
+      },
+      {
+        "tone": "G4",
+        "beat": 2,
+        "duration": 1,
+      },
+      {
+        "tone": "F4",
+        "beat": 3,
+        "duration": 1,
+      },
+      {
+        "tone": "F4",
+        "beat": 4,
+        "duration": 1,
+      },
+      {
+        "tone": "E4",
+        "beat": 5,
+        "duration": 1,
+      },
+      {
+        "tone": "E4",
+        "beat": 6,
+        "duration": 1,
+      },
+      {
+        "tone": "D4",
+        "beat": 7,
+        "duration": 2,
+      }
+    ]},
+    {"4":[
+      {
+        "tone": "G4",
+        "beat": 1,
+        "duration": 1,
+      },
+      {
+        "tone": "G4",
+        "beat": 2,
+        "duration": 1,
+      },
+      {
+        "tone": "F4",
+        "beat": 3,
+        "duration": 1,
+      },
+      {
+        "tone": "F4",
+        "beat": 4,
+        "duration": 1,
+      },
+      {
+        "tone": "E4",
+        "beat": 5,
+        "duration": 1,
+      },
+      {
+        "tone": "E4",
+        "beat": 6,
+        "duration": 1,
+      },
+      {
+        "tone": "D4",
+        "beat": 7,
+        "duration": 2,
+      }
+    ]},
+    {"5":[
+      {
+        "tone": "C4",
+        "beat": 1,
+        "duration": 1,
+      },
+      {
+        "tone": "C4",
+        "beat": 2,
+        "duration": 1,
+      },
+      {
+        "tone": "G4",
+        "beat": 3,
+        "duration": 1,
+      },
+      {
+        "tone": "G4",
+        "beat": 4,
+        "duration": 1,
+      },
+      {
+        "tone": "A4",
+        "beat": 5,
+        "duration": 1,
+      },
+      {
+        "tone": "A4",
+        "beat": 6,
+        "duration": 1,
+      },
+      {
+        "tone": "G4",
+        "beat": 7,
+        "duration": 2,
+      }
+    ]},
+    {"6":[
+      {
+        "tone": "F4",
+        "beat": 1,
+        "duration": 1,
+      },
+      {
+        "tone": "F4",
+        "beat": 2,
+        "duration": 1,
+      },
+      {
+        "tone": "E4",
+        "beat": 3,
+        "duration": 1,
+      },
+      {
+        "tone": "E4",
+        "beat": 4,
+        "duration": 1,
+      },
+      {
+        "tone": "D4",
+        "beat": 5,
+        "duration": 1,
+      },
+      {
+        "tone": "D4",
+        "beat": 6,
+        "duration": 1,
+      },
+      {
+        "tone": "C4",
+        "beat": 7,
+        "duration": 2,
+      }
+    ]}
+  ],
+  "chords": [
+    {"1":[
+      {
+        "tone": "C3",
+        "beat": 1,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 1.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 2,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 2.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 3,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 3.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 4,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 4.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 5.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "A3",
+        "beat": 6,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 6.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 7,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 7.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 8,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 8.5,
+        "duration": 0.5,
+      }
+    ]},
+    {"2":[
+      {
+        "tone": "B2",
+        "beat": 1,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 1.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 2,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 2.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 3,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 3.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 4,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 4.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "B2",
+        "beat": 5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 5.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 6,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 6.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 7,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 7.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 8,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 8.5,
+        "duration": 0.5,
+      }
+    ]},
+    {"3":[
+      {
+        "tone": "C3",
+        "beat": 1,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 1.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 2,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 2.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "B2",
+        "beat": 3,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 3.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 4,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 4.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 5.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 6,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 6.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "B2",
+        "beat": 7,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 7.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 8,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 8.5,
+        "duration": 0.5,
+      }
+    ]},
+    {"4":[
+      {
+        "tone": "C3",
+        "beat": 1,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 1.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 2,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 2.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "B2",
+        "beat": 3,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 3.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 4,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 4.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 5.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 6,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 6.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "B2",
+        "beat": 7,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 7.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 8,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 8.5,
+        "duration": 0.5,
+      }
+    ]},
+    {"5":[
+      {
+        "tone": "C3",
+        "beat": 1,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 1.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 2,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 2.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 3,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 3.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 4,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 4.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 5.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "A3",
+        "beat": 6,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 6.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 7,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 7.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 8,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 8.5,
+        "duration": 0.5,
+      }
+    ]},
+    {"6":[
+      {
+        "tone": "B2",
+        "beat": 1,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 1.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 2,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 2.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 3,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 3.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 4,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 4.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "B2",
+        "beat": 5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 5.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "F3",
+        "beat": 6,
+        "duration": 0.5,
+      },
+      {
+        "tone": "D3",
+        "beat": 6.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "C3",
+        "beat": 7,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 7.5,
+        "duration": 0.5,
+      },
+      {
+        "tone": "G3",
+        "beat": 8,
+        "duration": 0.5,
+      },
+      {
+        "tone": "E3",
+        "beat": 8.5,
+        "duration": 0.5,
+      }
+    ]}
+  ]
+}

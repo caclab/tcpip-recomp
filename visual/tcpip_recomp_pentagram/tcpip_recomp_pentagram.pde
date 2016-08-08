@@ -19,7 +19,7 @@ JSONObject js;
 String songTitle;
 String timeSignature;
 float beatSpeed;
-int barNum, beatNumInBar;
+int barNum, beatNumInBar, beatLength;
 
 int n1, n2;
 HashMap<String, Float> toneMap = new HashMap<String, Float>();
@@ -30,6 +30,10 @@ ArrayList<Bar> chordBars = new ArrayList<Bar>();
 
 float noteAccum;
 
+
+PShape GClef, FClef;
+PFont font;
+
 void setup() {
   size(600, 800);
   pixelDensity(displayDensity());
@@ -37,6 +41,9 @@ void setup() {
   smooth();
   toneMapSetup();
   JSONParser("littleStar.json");
+  GClef = loadShape("GClef.svg");
+  FClef = loadShape("FClef.svg");
+  font = loadFont("TimesNewRomanPS-BoldMT-20.vlw");
 
 
   marginX = width*0.05;
@@ -45,7 +52,7 @@ void setup() {
 
   for (Bar mb : chordBars) {
     barAnalyse(mb);
-    println(mb.notes.size(), mb.noteGroups.size(), mb.singleNotes.size());
+    //println(mb.notes.size(), mb.noteGroups.size(), mb.singleNotes.size());
   }
 
   for (Bar mb : chapterBars) {
@@ -63,6 +70,20 @@ void draw() {
   //pageIndex = 0;
   //gramIndex = 0;
   //offsetX = marginX+head;
+
+  if (pageOnDisplay == 1) {
+    textFont(font,20);
+    textAlign(CENTER, TOP);
+    //textSize(20);
+    text(songTitle, width/2, marginY);
+    
+    textFont(font,lineDistance*3);
+    textAlign(CENTER, TOP);
+    text(str(beatNumInBar), marginX+30, marginY+titleHeight+lineDistance*2);
+    textAlign(CENTER, BOTTOM);
+    text(str(beatLength), marginX+30, marginY+titleHeight+lineDistance*2+3);
+  }
+
   int tempGramGroupCount;
   if (pageOnDisplay == 1) tempGramGroupCount = gramGroupCount;
   else tempGramGroupCount = gramGroupCount + 1;
@@ -73,8 +94,14 @@ void draw() {
     else offset = marginY+gramGroupHeight*j;
     offset2 = offset + lineDistance*4+gramDistance;
 
+    shape(GClef, marginX+3, offset-10);
+    shape(FClef, marginX+3, offset2);
+
+
     line(marginX, offset, marginX, offset2+lineDistance*4);
     line(width-marginX, offset, width-marginX, offset2+lineDistance*4);
+
+
 
     for (int i = 0; i< 5; i++) {
       line(marginX, offset+lineDistance*i, width-marginX, offset+lineDistance*i);
@@ -99,7 +126,7 @@ void draw() {
       float offsetY = (gramIndex-1)*gramGroupHeight+(1/pageOnDisplay)*titleHeight+marginY;
       line(offsetX+10, offsetY, offsetX+10, offsetY+4*lineDistance);
       if (i< chordBars.size()) {
-        float offsetY2 = offsetY + gramGroupDistance + lineDistance * 4;
+        float offsetY2 = offsetY + gramDistance + lineDistance * 4;
         line(offsetX+10, offsetY2, offsetX+10, offsetY2+4*lineDistance);
       }
     }
@@ -293,6 +320,7 @@ void JSONParser(String fileName) {
 
   String[] ts = timeSignature.split("/");
   beatNumInBar = Integer.parseInt(ts[1]);
+  beatLength = Integer.parseInt(ts[0]);
 
   JSONArray jsc = js.getJSONArray("chapters");
 
